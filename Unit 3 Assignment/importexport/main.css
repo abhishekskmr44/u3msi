@@ -1,0 +1,112 @@
+body{
+    background-image: url("https://food.fnr.sndimg.com/content/dam/images/food/unsized/2018/5/16/FND_ITK-Apple-TV-Save.gif");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 90%;
+     background-size: cover; 
+  background-repeat: no-repeat;
+  
+  }
+  
+  #navbar {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 4%;
+      padding-right: 4%;
+      border: solid 1px black;
+      background-color: rgb(204, 28, 151);
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+  #s{
+    display: flex;
+    margin: auto;
+    padding: 20px;
+    width: 500px;
+    gap: 25px;
+  }
+  input{
+    height: 35px;
+    width: 100%;
+    padding: 1px;
+    border-radius: 0%;
+    text-indent: 5rem;
+  }
+    .options {
+  
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+    }
+    input:hover{
+      background-color: #cecece;
+    }
+    .options>h3 {
+  
+      padding-left: 30px;
+      padding-right: 10px;
+      color: whitesmoke;
+      
+    }
+    .options >h3 :hover {
+      color: yellow;
+  
+    }
+    a:hover{
+      color: yellow;
+    }
+    img {
+  
+      width: 30%
+    }
+  
+    button{
+      background-color: goldenrod;
+      font-size: 1.2em;
+      color: aqua;
+      cursor: pointer;
+    }
+    button:hover{
+      color: blueviolet;
+    }
+    #data {
+      
+      display: grid;
+      margin: auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      justify-content: center;
+      background-color: wheat
+  
+    }
+    h1{
+      color: red;
+    }
+    h4{
+      color: teal;
+    }
+  
+    h6{
+      font-size: 1.2em;
+      color: blue;
+    }
+    #data>div{
+      padding: 20px;
+    }
+    
+  img{
+      width: 500px;
+      height: 50%;
+  }
+       #flex{
+         display: flex;
+         width: 100%;
+         gap: 20px;
+       }
+       #flo{
+         display: initial;
+         gap: 10px;
+         width: 800px;
+         padding: 5px;
+        
+       }

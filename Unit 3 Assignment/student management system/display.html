@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+</head>
+<style>
+    #container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        display: inline-flex;
+        transform: translate(-50%,-50%);
+        width: 700px;
+        height: 300px;
+        background-color: rgb(255, 213, 213);
+    }
+</style>
+<body background="https://www.compass-insurance-agency.com/wp-content/uploads/2016/09/girl-education.jpg">
+    <div id="container">
+
+    </div>
+    
+</body>
+</html>
+<script>
+    var displayed = document.getElementById("container");
+    var user = JSON.parse(localStorage.getItem("students"));
+
+    var main = document.createElement("div");
+
+let data = document.createElement("h4");
+data.innerHTML = (JSON.stringify(user[0]));
+
+
+main.append(data);
+displayed.append(main);
+   
+</script>

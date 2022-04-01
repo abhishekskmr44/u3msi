@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+#navbar {
+      display: flex;
+      padding-left: 4%;
+      padding-right: 4%;
+      border: solid black 1px;
+      justify-content: space-between;
+}
+    #sam{
+        display: flex;
+        margin: 10px;
+        width: 300px;
+        height: 200px
+    }
+    #flex{
+        text-align: center;
+        margin: 10px;
+    }
+    #sai{
+        margin: auto;
+        margin-top: 20px;
+        padding: 50px;
+        margin-left: 550px;
+    }
+    input{
+        width: 50%;
+        margin-bottom: 30px;
+        padding: 20px;
+        margin: auto;
+    }
+        #movies {
+            margin: auto;
+            height: 300px;
+            width: 1000px;
+            border: none; 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            overflow: scroll;
+            margin-bottom: 100px;
+        }
+        #results{
+           
+           width: 500px;
+           height: 406px;
+           margin-left: 10px;
+           padding-left: 20px;
+       }
+</style>
+<body>
+    <div id="navbar">
+        <h3> <a href="index.html">Home</a></h3>
+    
+        <h3> <a href="trending.html"> Top trending Moive </a></h3>
+      </div>
+    <div id="sai">
+    <input oninput="debounce(main, 1000)" type="text" placeholder="Search your favorite movie" id="querry" >
+</div>
+    
+    <div id="movies"></div>
+    <div id="result"></div>
+    
+</body>
+</html>
+<script src="closure.js"></script>

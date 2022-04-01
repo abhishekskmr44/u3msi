@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <style>
+        #cont{
+            width: 400px;
+            margin: auto;
+            margin-top: 50px;
+            /* border: 1px solid red; */
+        }
+        #cont div{
+            width: 100%;
+            height: 250px;
+        }
+        #cont img:nth-child(1){
+            width: 100%;
+        }
+        .recomend{
+            width: 20%;
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            top: 13%;
+        }
+    </style>
+</head>
+<body>
+    <input placeholder="Search" id="movie" type="text"><button id="btn">Search</button>
+    <div id="cont"></div>
+
+</body>
+<script>
+    let movie=document.getElementById("movie");
+    let btn=document.getElementById("btn");
+    let cont=document.getElementById("cont");
+
+    let error={
+                Poster:"./notfound.jpg",
+                Title:"Movie not found",
+                Plot:"You have typed the wrong movie name or you have internet issue",
+            }
+
+    btn.addEventListener("click",function(){
+        Fetch(movie.value);
+    })
+
+    function Fetch(movie){
+        let data;
+        fetch(`http://www.omdbapi.com/?apikey=d26a1acc&t=${movie}`)
+        .then(function(res){
+            return res.json()
+        }).then(function(json){
+          data=json;
+          console.log(data);
+          if(data.Title !=undefined){
+          DOM(data);
+          }else{
+            DOM(error);
+          }
+        }).catch(function(err){
+            console.log(err);
+            DOM(error)
+        })
+    }
+
+    function DOM(obj){
+      cont.innerHTML=null;
+      let img=document.createElement("img");
+      img.src=obj.Poster;
+      cont.appendChild(img);
+      let text=document.createElement("div");
+      let h1=document.createElement("h1");
+      h1.textContent=obj.Title
+      text.appendChild(h1);
+      let p=document.createElement("p");
+      p.textContent=obj.Plot;
+      text.appendChild(p);
+      
+      let p1=document.createElement("p");
+      p1.textContent="Actors:-  "+obj.Actors;
+      text.appendChild(p1);
+      let p2=document.createElement("p");
+      p2.textContent="Release Date:-  "+obj.Released;
+      text.appendChild(p2);
+      let p3=document.createElement("p");
+      p3.textContent="Ratings:-  "+obj.Ratings[0].Value;
+      text.appendChild(p3);
+      cont.appendChild(text);
+
+      let recomend=document.createElement("img");
+      recomend.src="./recomended.png";
+      recomend.setAttribute("class","recomend");
+      let rating=obj.Ratings[0].Value.trim().split("/");
+       if(+(rating[0])>=8.5){
+        cont.appendChild(recomend);
+       }
+
+    }
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <style>
+        #cont{
+            width: 400px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        #cont div{
+            width: 100%;
+            height: 100px;
+        }
+        #cont img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <input placeholder="Search" id="movie" type="text"><button id="btn">Search</button>
+    <div id="cont"></div>
+
+</body>
+<script>
+    let movie=document.getElementById("movie");
+    let btn=document.getElementById("btn");
+    let cont=document.getElementById("cont");
+
+    btn.addEventListener("click",function(){
+        Fetch(movie.value);
+    })
+
+    async function Fetch(movie){
+        let res= await fetch(`http://www.omdbapi.com/?apikey=d26a1acc&t=${movie}`);
+        let data= await res.json();
+        console.log(data);
+        DOM(data);
+    }
+
+    function DOM(obj){
+      let img=document.createElement("img");
+      img.src=obj.Poster;
+      cont.appendChild(img);
+      let text=document.createElement("div");
+      let h1=document.createElement("h1");
+      h1.textContent=obj.Title
+      text.appendChild(h1);
+      let p=document.createElement("p");
+      p.textContent=obj.Plot;
+      text.appendChild(p);
+      cont.appendChild(text);
+
+    }
+</script>
+</html>

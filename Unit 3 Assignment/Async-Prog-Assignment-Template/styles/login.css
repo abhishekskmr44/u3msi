@@ -1,0 +1,57 @@
+.nav {
+    display: flex;
+  margin-top: 20px;
+    height: 30px;
+    padding: 25px;
+  border: 1px solid black;
+    /* top right bottom left */
+  }
+  .left {
+    width: 70%;
+  }
+  .right {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  #login-form-div {
+    width: 40%;
+    margin: auto;
+    font-family: sans-serif;
+    margin-top: 25px;
+    padding: 29px;
+  }
+  
+  #userid {
+    width: 98.5%;
+    height: 30px;
+  }
+  
+  #pass {
+    width: 98.5%;
+    height: 30px;
+    margin-top: 10px;
+  }
+  
+  
+  
+  h1,
+  .center {
+    text-align: center;
+  }
+  
+  
+  
+  .login_btn {
+    width: 30%;
+    height: 37px;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 10px;
+  }
+  
+  
